@@ -1,0 +1,713 @@
+/* G */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* { 
+    /* text goes all the way til end of page */
+    margin: 0; 
+    padding: 0;
+} 
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+
+}
+/* HIDING SCROLL BAR for Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+    background: rgba(54, 69, 79, 0.9);
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(27, 18, 18, 0.3);
+    border-radius: 10px; /*rounded bar */
+  }
+
+/* PARAGRAPH COLOR */
+p { 
+    color:rgb(85, 85, 85);
+
+}
+
+/* TRANSITION FOR LINKS, button for changing between highlight and non highlight */
+
+a, .btn {
+    transition: all 300ms ease;
+
+}
+
+/* DESKTOP NAV */
+
+nav, .nav-links {
+    display: flex; /* Makes the links side by side instead of below each other */
+    list-style-type: none;  
+}
+
+
+nav { /* ALL NAV */
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    ul {
+    list-style-type: none; 
+    } 
+}
+
+/* FORMATTING LINKS AT TOP OF PAGE */
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: rgb(218, 65, 103);
+    text-decoration: underline;
+    text-underline-offset: 1rem; /* FORMAT FOR LINE UNDER LINKS (AESTHETIC) */
+    text-decoration-color: rgb(190,181,220);
+}
+
+.logo {
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    
+    
+}
+
+.logo:hover {
+    cursor:default;
+}
+
+/* HAMBURGER MENU */
+
+#hMenu-nav {
+    display: none;
+}
+
+.hMenu {
+    position: relative;
+    display: inline-block;
+}
+
+.hMenu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer; /*to know its a menu */
+}
+
+.hMenu-icon span { /* "span is basically just the lines of the hamburger menu" */
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+   position: absolute;
+   top: 100%;
+   right: 0%;
+   background-color: rgba(255,255,255, 0.8);
+   width: fit-content;
+   max-height: 0;
+   overflow: hidden;
+   transition: all 0.3 ease-in-out; 
+}
+
+.menu-links.open {
+    max-height: 300px;
+    background-color:transparent;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out; 
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+
+.hMenu-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px,5px);
+}
+
+.hMenu-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hMenu-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px,-5px);
+}
+
+
+
+
+.hMenu-icon span:first-child {
+    transform: none;
+}
+
+.hMenu-icon span:first-child {
+    opacity: 1;
+}
+
+.hMenu-icon span:first-child {
+    transform: none;
+}
+
+
+/* SECTIONS */
+
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container {
+    display: flex;
+}
+
+/* PROFILE SECTIONS */
+
+#profile {
+    display: flex;
+    justify-content: left;
+    gap: 0.3rem;
+    height: 810vh;
+
+}
+
+.section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0px;
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+
+}
+
+.section__text p {
+    font-weight: 600;
+}
+
+.section__text__p1 {
+    text-align: center;
+}
+
+.section__text__p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#socials-contianer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    gap: 5rem;
+}
+
+/* ICONS  */
+
+.icon {
+    cursor: pointer;
+    height: 2rem;
+}
+
+/* BUTTONS */
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all .03 ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 3rem;
+}
+
+.btn-color-1, .btn-color-2 {
+    border: rgb(53, 53, 53) 0.05   0.1rem solid;
+}
+
+.btn-color-1:hover, .btn-color-2:hover {
+    cursor: pointer;
+}
+
+.btn-color-1, .btn-color-2:hover {
+    background-color: rgb(53, 53, 53);
+    color: white;
+}
+
+.btn-color-1:hover {
+    background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+    background: none;
+}
+
+.btn-color-2:hover {
+    border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BUBBLES */
+
+/* Ensuring that the main section is above the bubbles */
+section, nav {
+    position: relative;
+    z-index: 10; /* Higher value = in front */
+}
+
+/* Bubbles Background */
+.gradient-bg {
+    position: absolute;
+    z-index: 1; /* Lower value=behind */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+}
+
+/* Interactive Bubbles (DOESNT WORK HAHA IDK WHY!!!!) */
+.interactive {
+    position: absolute;
+    z-index: 2; /* Ensure this is above the gradient background */
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+    opacity: 0.7;
+}
+
+
+:root {
+    --color-bg1: rgb(40,40,40);
+    --color-bg2: rgb(64,0,0);
+    --color1: 208,0,0;
+    --color2: 160,0,0;
+    --color3: 88,0,0;
+    --color4: 104,104,104;
+    --color5: 255,255,255;
+    --color-interactive: 0,0,0;
+    --circle-size: 80%;
+    --blending: hard-light;
+  }
+
+.gradient-bg {
+        position: fixed; /* Change to fixed to cover the entire viewport */
+        z-index: 1; 
+        width: 100%;
+        height: 100%; 
+        background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+        top: 0; 
+}
+
+    svg {
+        display: none;
+    }
+
+    .gradients-container {
+        filter: url(#goo) blur(40px);
+        width: 100%;
+        height: 100%;
+    }
+
+    .g1 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+    
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(20% - var(--circle-size) / 2);
+        left: calc(20% - var(--circle-size) / 2);
+    
+        transform-origin: center center;
+        animation: moveVertical 10s ease infinite;
+    
+        opacity: 1;
+      }
+    
+      .g2 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+    
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(20% - var(--circle-size) / 2);
+        left: calc(20% - var(--circle-size) / 2);
+    
+        transform-origin: calc(50% - 400px);
+        animation: moveInCircle 10s reverse infinite;
+    
+        opacity: 1;
+      }
+    
+      .g3 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+    
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2 + 200px);
+        left: calc(50% - var(--circle-size) / 2 - 500px);
+    
+        transform-origin: calc(50% + 400px);
+        animation: moveInCircle 10s linear infinite;
+    
+        opacity: 1;
+      }
+    
+      .g4 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+    
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(30% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+    
+        transform-origin: calc(50% - 200px);
+        animation: moveHorizontal 10s ease infinite;
+    
+        opacity: 0.7;
+      }
+    
+      .g5 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+    
+        width: calc(var(--circle-size) * 2);
+        height: calc(var(--circle-size) * 2);
+        top: calc(50% - var(--circle-size));
+        left: calc(50% - var(--circle-size));
+    
+        transform-origin: calc(50% - 800px) calc(50% + 200px);
+        animation: moveInCircle 10s ease infinite;
+    
+        opacity: 1;
+      }
+    
+      .interactive {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+    
+        width: 100%;
+        height: 100%;
+        top: -50%;
+        left: -50%;
+    
+        opacity: 0.7;
+      }
+
+@keyframes moveInCircle {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      
+      @keyframes moveVertical {
+        0% {
+          transform: translateY(-50%);
+        }
+        50% {
+          transform: translateY(50%);
+        }
+        100% {
+          transform: translateY(-50%);
+        }
+      }
+      
+      @keyframes moveHorizontal {
+        0% {
+          transform: translateX(-50%) translateY(-10%);
+        }
+        50% {
+          transform: translateX(50%) translateY(10%);
+        }
+        100% {
+          transform: translateX(-50%) translateY(-10%);
+        }
+      }
+      
+.interactive {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+    
+        width: 100%;
+        height: 100%;
+        top: -50%;
+        left: -50%;
+    
+        opacity: 0.7;
+}

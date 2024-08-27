@@ -1,0 +1,9 @@
+/* WHEN SCREEN SIZE < 1200PX, DESKTOP NAV DISSAPEARS, HAMBURGER MENU APPEARS */
+@media screen and (max-width: 1200px) {
+    #desktop-nav {
+        display: none;
+    }
+    #hMenu-nav {
+        display: flex;
+    }
+}
